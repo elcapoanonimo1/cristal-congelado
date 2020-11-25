@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cristal Congelado</title>
+</head>
+<body>
+	<style>
+				@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+		* 
+		{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family:  'Nerko One', cursive;
+		}
+		section
+		{
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background: url(https://i.imgur.com/rqlmVeB.jpeg);
+			background-position: center;
+			background-attachment: fixed;
+			background-size: cover;
+			overflow: hidden;
+		}
+		section h2
+		{
+			font-size: 5em;
+			color: #fff;
+			pointer-events: none;
+			text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+		}
+		section .glass
+		{
+			position: absolute;
+			transform: translate(-50%,-50%);
+			pointer-events: none;
+			width: 300px;
+			height: 200px;
+			box-shadow: 0 26px 50px rgba(0,0,0,0.2);
+			background: transparent;
+			backdrop-filter: blur(10px);
+			transition: 0.2s;
+		}
+	</style>
+	<section>
+		<h2>Cristal Congelado</h2>
+		<div class="glass"></div>
+	</section>
+	<script>
+		document.addEventListener("mousemove",function(e){
+			const glass = document.querySelector('.glass');
+			glass.style.left = e.offsetX + 'px';
+			glass.style.top = e.offsetY + 'px';
+		})
+	</script>
+</body>
+</html>
